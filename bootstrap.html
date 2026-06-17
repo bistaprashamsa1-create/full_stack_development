@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap | CET138 ePortfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Bootstrap-style alert boxes */
+    .bs-alert {
+      border-radius: 5px; padding: 14px 18px; margin-bottom: 10px;
+      font-size: 0.9rem; border: 1px solid transparent;
+    }
+    .bs-alert-info    { background:#cff4fc; border-color:#b6effb; color:#055160; }
+    .bs-alert-success { background:#d1e7dd; border-color:#badbcc; color:#0f5132; }
+    .bs-alert-warning { background:#fff3cd; border-color:#ffecb5; color:#664d03; }
+    .bs-alert-danger  { background:#f8d7da; border-color:#f5c2c7; color:#842029; }
+
+    /* Bootstrap-style card demo */
+    .bs-card {
+      border: 1px solid #dee2e6; border-radius: 8px; overflow: hidden;
+      background: #fff; font-size: 0.88rem; max-width: 280px;
+    }
+    .bs-card-header { background:#f8f9fa; padding:12px 16px; font-weight:700; border-bottom:1px solid #dee2e6; }
+    .bs-card-body   { padding:16px; color:#444; line-height:1.6; }
+    .bs-card-footer { background:#f8f9fa; padding:10px 16px; border-top:1px solid #dee2e6; font-size:0.82rem; color:#888; }
+
+    /* Badge demo */
+    .bs-badge {
+      display:inline-block; padding:3px 10px; border-radius:20px;
+      font-size:0.78rem; font-weight:700; color:#fff; margin:3px;
+    }
+    .bg-primary  { background:#0d6efd; }
+    .bg-success  { background:#198754; }
+    .bg-danger   { background:#dc3545; }
+    .bg-warning  { background:#ffc107; color:#212529; }
+    .bg-info     { background:#0dcaf0; color:#212529; }
+    .bg-dark     { background:#212529; }
+
+    /* Responsive table */
+    .bs-table { width:100%; border-collapse:collapse; font-size:0.87rem; }
+    .bs-table th { background:#212529; color:#fff; padding:10px 14px; text-align:left; }
+    .bs-table td { padding:10px 14px; border-bottom:1px solid #dee2e6; }
+    .bs-table tr:nth-child(even) td { background:#f2f2f2; }
+
+    /* Navbar preview */
+    .bs-navbar {
+      background:#212529; display:flex; align-items:center;
+      padding:10px 18px; border-radius:6px; gap:18px; flex-wrap:wrap;
+    }
+    .bs-navbar .brand { color:#fff; font-weight:700; font-size:1rem; margin-right:auto; }
+    .bs-navbar a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.88rem; }
+    .bs-navbar a:hover { color:#fff; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CET138 – Full Stack Development</h1>
+  <p class="subtitle">ePortfolio Assessment — Section 4: Bootstrap Framework</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="fullstack.html">Full Stack</a>
+  <a href="html.html">HTML</a>
+  <a href="css.html">CSS</a>
+  <a href="bootstrap.html" class="active">Bootstrap</a>
+  <a href="js.html">JavaScript</a>
+</nav>
+
+<main>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <h2 class="page-title">Bootstrap Framework</h2>
+
+  <p class="lead">Bootstrap is the world's most popular <b>open-source CSS framework</b>. It provides a responsive grid system, pre-built UI components, and utility classes that make it fast to build professional, <b>mobile-first</b> web interfaces without writing CSS from scratch.</p>
+
+  <p class="lead">Bootstrap is maintained by the original Twitter team and has been downloaded billions of times. The current major version is <b>Bootstrap 5</b>, which dropped the jQuery dependency.</p>
+
+  <!-- Include -->
+  <p class="section-label">Including Bootstrap via CDN</p>
+  <div class="code-label">HTML</div>
+  <div class="code-block">
+<span class="comment">&lt;!-- Bootstrap 5 CSS (in &lt;head&gt;) --&gt;</span><br>
+&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attr">href</span>=<span class="str">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"</span>&gt;<br><br>
+<span class="comment">&lt;!-- Bootstrap 5 JS Bundle (before &lt;/body&gt;) --&gt;</span><br>
+&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+  </div>
+
+  <!-- Grid -->
+  <p class="section-label">The Grid System</p>
+  <p class="lead">Bootstrap's grid divides each row into <b>12 columns</b>. You combine classes like <b>col-4</b> (4 of 12 = one third) to create layouts. Breakpoint prefixes (<code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>) control how columns stack on different screen sizes.</p>
+
+  <div class="code-label">HTML</div>
+  <div class="code-block">
+&lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"container"</span>&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"row"</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"col-md-4"</span>&gt;Column 1&lt;/<span class="tag">div</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"col-md-4"</span>&gt;Column 2&lt;/<span class="tag">div</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="str">"col-md-4"</span>&gt;Column 3&lt;/<span class="tag">div</span>&gt;<br>
+&nbsp;&nbsp;&lt;/<span class="tag">div</span>&gt;<br>
+&lt;/<span class="tag">div</span>&gt;
+  </div>
+
+  <div class="demo-area">
+    <h4>Grid Demo — 3 Equal Columns</h4>
+    <div class="bs-grid-demo">
+      <div class="bs-col">col-md-4</div>
+      <div class="bs-col">col-md-4</div>
+      <div class="bs-col">col-md-4</div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-top:10px;">
+      <div class="bs-col">col-md-8</div>
+      <div class="bs-col" style="background:#9ec5fe;">col-md-4</div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <p class="section-label">Button Components</p>
+  <div class="demo-area">
+    <h4>Bootstrap Buttons</h4>
+    <button class="bs-btn bs-primary">btn-primary</button>
+    <button class="bs-btn bs-success">btn-success</button>
+    <button class="bs-btn bs-danger">btn-danger</button>
+    <button class="bs-btn bs-warning">btn-warning</button>
+    <button class="bs-btn bs-outline">btn-outline-primary</button>
+  </div>
+
+  <!-- Alerts -->
+  <p class="section-label">Alert Components</p>
+  <div class="demo-area">
+    <h4>Bootstrap Alerts</h4>
+    <div class="bs-alert bs-alert-info">ℹ️ <strong>Info:</strong> This is an informational alert.</div>
+    <div class="bs-alert bs-alert-success">✅ <strong>Success:</strong> Your form was submitted successfully!</div>
+    <div class="bs-alert bs-alert-warning">⚠️ <strong>Warning:</strong> Please check your input before continuing.</div>
+    <div class="bs-alert bs-alert-danger">❌ <strong>Error:</strong> Something went wrong. Please try again.</div>
+  </div>
+
+  <!-- Badges -->
+  <p class="section-label">Badge Components</p>
+  <div class="demo-area">
+    <h4>Bootstrap Badges</h4>
+    <span class="bs-badge bg-primary">Primary</span>
+    <span class="bs-badge bg-success">Success</span>
+    <span class="bs-badge bg-danger">Danger</span>
+    <span class="bs-badge bg-warning">Warning</span>
+    <span class="bs-badge bg-info">Info</span>
+    <span class="bs-badge bg-dark">Dark</span>
+  </div>
+
+  <!-- Card -->
+  <p class="section-label">Card Component</p>
+  <div class="demo-area">
+    <h4>Bootstrap Card</h4>
+    <div class="bs-card">
+      <div class="bs-card-header">Card Title</div>
+      <div class="bs-card-body">
+        This is a Bootstrap card component. It's a flexible container for content with a header, body, and footer.
+        <br><br>
+        <button class="bs-btn bs-primary" style="font-size:0.82rem;padding:6px 14px;">Learn More</button>
+      </div>
+      <div class="bs-card-footer">Last updated 3 mins ago</div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <p class="section-label">Navbar Component</p>
+  <div class="demo-area">
+    <h4>Bootstrap Navbar Preview</h4>
+    <div class="bs-navbar">
+      <span class="brand">MyBrand</span>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <p class="section-label">Table Component</p>
+  <div class="demo-area">
+    <h4>Striped Table</h4>
+    <table class="bs-table">
+      <tr><th>Name</th><th>Role</th><th>Status</th></tr>
+      <tr><td>Alice</td><td>Front-End Dev</td><td><span class="bs-badge bg-success" style="font-size:0.75rem;">Active</span></td></tr>
+      <tr><td>Bob</td><td>Back-End Dev</td><td><span class="bs-badge bg-success" style="font-size:0.75rem;">Active</span></td></tr>
+      <tr><td>Carol</td><td>Full Stack Dev</td><td><span class="bs-badge bg-warning" style="font-size:0.75rem;">On Leave</span></td></tr>
+    </table>
+  </div>
+
+  <div class="info-box">
+    💡 <strong>Mobile First:</strong> Bootstrap is built mobile-first — styles apply to small screens by default, and you use breakpoint classes (sm, md, lg, xl) to adjust layout for larger screens. This means your site is responsive without extra media queries.
+  </div>
+
+</main>
+
+<footer>
+  <strong>CET138 – Full Stack Development ePortfolio</strong><br>
+  Created as part of Assignment 1 · Section 4 of 5: Bootstrap Framework
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="fullstack.html">Full Stack</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="bootstrap.html">Bootstrap</a>
+    <a href="js.html">JavaScript</a>
+  </div>
+</footer>
+
+</body>
+</html>

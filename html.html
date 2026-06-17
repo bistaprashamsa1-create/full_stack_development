@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML | CET138 ePortfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>CET138 – Full Stack Development</h1>
+  <p class="subtitle">ePortfolio Assessment — Section 2: HTML</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="fullstack.html">Full Stack</a>
+  <a href="html.html" class="active">HTML</a>
+  <a href="css.html">CSS</a>
+  <a href="bootstrap.html">Bootstrap</a>
+  <a href="js.html">JavaScript</a>
+</nav>
+
+<main>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <h2 class="page-title">HTML – HyperText Markup Language</h2>
+
+  <p class="lead">HTML is the <b>standard markup language</b> for creating web pages. It describes the structure of a page using a series of <b>elements</b> represented by tags. Browsers parse HTML and render it as the visual content the user sees.</p>
+
+  <p class="lead">HTML alone defines the <b>structure and content</b> of a page — not the visual style (that's CSS) or the behaviour (that's JavaScript). Together the three form the foundation of every website.</p>
+
+  <!-- Tags overview -->
+  <p class="section-label">Common HTML Tags</p>
+  <div class="tag-list">
+    <span class="tag-pill">&lt;html&gt;</span>
+    <span class="tag-pill">&lt;head&gt;</span>
+    <span class="tag-pill">&lt;body&gt;</span>
+    <span class="tag-pill">&lt;h1&gt;–&lt;h6&gt;</span>
+    <span class="tag-pill">&lt;p&gt;</span>
+    <span class="tag-pill">&lt;a&gt;</span>
+    <span class="tag-pill">&lt;img&gt;</span>
+    <span class="tag-pill">&lt;ul&gt; / &lt;ol&gt;</span>
+    <span class="tag-pill">&lt;li&gt;</span>
+    <span class="tag-pill">&lt;table&gt;</span>
+    <span class="tag-pill">&lt;form&gt;</span>
+    <span class="tag-pill">&lt;input&gt;</span>
+    <span class="tag-pill">&lt;div&gt;</span>
+    <span class="tag-pill">&lt;span&gt;</span>
+    <span class="tag-pill">&lt;nav&gt;</span>
+    <span class="tag-pill">&lt;section&gt;</span>
+    <span class="tag-pill">&lt;article&gt;</span>
+    <span class="tag-pill">&lt;footer&gt;</span>
+  </div>
+
+  <!-- Basic page structure -->
+  <p class="section-label">Basic Page Structure</p>
+  <div class="code-label">HTML</div>
+  <div class="code-block">
+&lt;<span class="tag">!DOCTYPE html</span>&gt;<br>
+&lt;<span class="tag">html</span> <span class="attr">lang</span>=<span class="str">"en"</span>&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">head</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">meta</span> <span class="attr">charset</span>=<span class="str">"UTF-8"</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">meta</span> <span class="attr">name</span>=<span class="str">"viewport"</span> <span class="attr">content</span>=<span class="str">"width=device-width, initial-scale=1.0"</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">title</span>&gt;My Web Page&lt;/<span class="tag">title</span>&gt;<br>
+&nbsp;&nbsp;&lt;/<span class="tag">head</span>&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">body</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">header</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">h1</span>&gt;Hello, World!&lt;/<span class="tag">h1</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="tag">header</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">main</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">p</span>&gt;Welcome to my page.&lt;/<span class="tag">p</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="str">"about.html"</span>&gt;About Me&lt;/<span class="tag">a</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="tag">main</span>&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tag">footer</span>&gt;© 2025&lt;/<span class="tag">footer</span>&gt;<br>
+&nbsp;&nbsp;&lt;/<span class="tag">body</span>&gt;<br>
+&lt;/<span class="tag">html</span>&gt;
+  </div>
+
+  <!-- Live demo -->
+  <p class="section-label">Live Rendered Example</p>
+  <div class="demo-area">
+    <h4>Rendered Output</h4>
+    <div class="html-rendered">
+      <h1 style="font-size:1.4rem;margin-bottom:8px;color:#1e2d40;">Hello, World!</h1>
+      <p style="margin-bottom:10px;color:#444;line-height:1.65;">Welcome to my page. This paragraph is wrapped in a <code style="background:#eee;padding:2px 6px;border-radius:3px;font-size:0.85rem;">&lt;p&gt;</code> tag.</p>
+      <ul style="margin-left:20px;color:#444;line-height:1.8;margin-bottom:10px;">
+        <li>First list item</li>
+        <li>Second list item</li>
+        <li>Third list item</li>
+      </ul>
+      <a href="#" style="color:#3a7bd5;" onclick="return false;">Click here to learn more</a>
+    </div>
+  </div>
+
+  <!-- Forms -->
+  <p class="section-label">HTML Forms</p>
+  <p class="lead">Forms allow users to submit data. The <b>&lt;form&gt;</b> element wraps <b>&lt;input&gt;</b>, <b>&lt;select&gt;</b>, and <b>&lt;button&gt;</b> elements. The <code style="background:#eee;padding:2px 6px;border-radius:3px;font-size:0.9rem;">action</code> attribute defines where data is sent.</p>
+
+  <div class="code-label">HTML</div>
+  <div class="code-block">
+&lt;<span class="tag">form</span> <span class="attr">action</span>=<span class="str">"/submit"</span> <span class="attr">method</span>=<span class="str">"POST"</span>&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">label</span> <span class="attr">for</span>=<span class="str">"name"</span>&gt;Your Name:&lt;/<span class="tag">label</span>&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="str">"text"</span> <span class="attr">id</span>=<span class="str">"name"</span> <span class="attr">name</span>=<span class="str">"name"</span> <span class="attr">required</span>&gt;<br><br>
+&nbsp;&nbsp;&lt;<span class="tag">label</span> <span class="attr">for</span>=<span class="str">"email"</span>&gt;Email:&lt;/<span class="tag">label</span>&gt;<br>
+&nbsp;&nbsp;&lt;<span class="tag">input</span> <span class="attr">type</span>=<span class="str">"email"</span> <span class="attr">id</span>=<span class="str">"email"</span> <span class="attr">name</span>=<span class="str">"email"</span> <span class="attr">required</span>&gt;<br><br>
+&nbsp;&nbsp;&lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="str">"submit"</span>&gt;Send&lt;/<span class="tag">button</span>&gt;<br>
+&lt;/<span class="tag">form</span>&gt;
+  </div>
+
+  <!-- Semantic HTML -->
+  <p class="section-label">Semantic HTML</p>
+  <p class="lead">Semantic elements clearly describe their <b>meaning</b> to both the browser and the developer. Using tags like <b>&lt;header&gt;</b>, <b>&lt;nav&gt;</b>, <b>&lt;main&gt;</b>, <b>&lt;section&gt;</b>, <b>&lt;article&gt;</b>, and <b>&lt;footer&gt;</b> improves accessibility (screen readers) and SEO (search engines).</p>
+
+  <div class="layer-card">
+    <h3>Non-Semantic vs Semantic</h3>
+    <p>❌ <b>Non-semantic:</b> <code>&lt;div class="header"&gt;</code> — the tag tells us nothing about the content.<br>
+    ✅ <b>Semantic:</b> <code>&lt;header&gt;</code> — immediately clear this is a page header.</p>
+  </div>
+
+  <div class="info-box">
+    💡 <strong>Best Practice:</strong> Always use semantic HTML where possible. It makes your code more readable, improves screen-reader accessibility for users with disabilities, and helps search engines correctly index your content — all with zero extra effort.
+  </div>
+
+</main>
+
+<footer>
+  <strong>CET138 – Full Stack Development ePortfolio</strong><br>
+  Created as part of Assignment 1 · Section 2 of 5: HTML
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="fullstack.html">Full Stack</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="bootstrap.html">Bootstrap</a>
+    <a href="js.html">JavaScript</a>
+  </div>
+</footer>
+
+</body>
+</html>

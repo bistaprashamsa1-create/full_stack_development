@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript | CET138 ePortfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .quiz-option {
+      display:block; width:100%; text-align:left; background:#f8f9fb;
+      border:2px solid #dde3ec; border-radius:6px; padding:11px 16px;
+      margin-bottom:8px; cursor:pointer; font-size:0.9rem;
+      transition:background 0.2s, border-color 0.2s;
+    }
+    .quiz-option:hover  { background:#eaf3ff; border-color:#3a7bd5; }
+    .quiz-option.correct { background:#d1e7dd; border-color:#27ae60; color:#0f5132; font-weight:600; }
+    .quiz-option.wrong   { background:#f8d7da; border-color:#e74c3c; color:#842029; }
+    .quiz-result { margin-top:12px; font-weight:700; font-size:0.95rem; min-height:24px; }
+    .todo-input-row { display:flex; gap:8px; margin-bottom:12px; }
+    .todo-input { flex:1; padding:9px 12px; border:1px solid #ccc; border-radius:5px; font-size:0.9rem; }
+    .todo-list  { list-style:none; padding:0; }
+    .todo-list li {
+      display:flex; align-items:center; gap:10px;
+      padding:9px 12px; border-bottom:1px solid #eee; font-size:0.9rem;
+    }
+    .todo-list li.done span { text-decoration:line-through; color:#888; }
+    .todo-list li button { margin-left:auto; background:#e74c3c; color:#fff; border:none; border-radius:4px; padding:3px 10px; cursor:pointer; font-size:0.8rem; }
+    .todo-list li input[type="checkbox"] { cursor:pointer; width:16px; height:16px; }
+    .color-box { width:100%; height:60px; border-radius:7px; margin-top:10px; transition:background 0.4s; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CET138 – Full Stack Development</h1>
+  <p class="subtitle">ePortfolio Assessment — Section 5: JavaScript</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="fullstack.html">Full Stack</a>
+  <a href="html.html">HTML</a>
+  <a href="css.html">CSS</a>
+  <a href="bootstrap.html">Bootstrap</a>
+  <a href="js.html" class="active">JavaScript</a>
+</nav>
+
+<main>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <h2 class="page-title">JavaScript</h2>
+
+  <p class="lead">JavaScript is the <b>programming language of the web</b>. It runs in the browser and allows developers to create dynamically updating content, respond to user events, validate forms, communicate with servers via APIs, and build full interactive applications.</p>
+
+  <p class="lead">Together with HTML and CSS, JavaScript forms the <b>third pillar</b> of front-end development. It can also run on the server via <b>Node.js</b>, making it truly full stack.</p>
+
+  <!-- Variables -->
+  <p class="section-label">Variables & Data Types</p>
+  <div class="code-label">JAVASCRIPT</div>
+  <div class="code-block">
+<span class="comment">// Variable declarations (ES6+)</span><br>
+<span class="kw">let</span> name = <span class="str">"Alice"</span>;       <span class="comment">// reassignable</span><br>
+<span class="kw">const</span> age = <span class="val">25</span>;          <span class="comment">// constant</span><br>
+<span class="kw">var</span> legacy = <span class="str">"avoid"</span>;    <span class="comment">// older — use let/const instead</span><br><br>
+<span class="comment">// Data types</span><br>
+<span class="kw">let</span> num = <span class="val">42</span>;             <span class="comment">// Number</span><br>
+<span class="kw">let</span> flag = <span class="val">true</span>;         <span class="comment">// Boolean</span><br>
+<span class="kw">let</span> arr = [<span class="str">"a"</span>, <span class="str">"b"</span>, <span class="str">"c"</span>]; <span class="comment">// Array</span><br>
+<span class="kw">let</span> obj = { key: <span class="str">"value"</span> }; <span class="comment">// Object</span>
+  </div>
+
+  <!-- Functions -->
+  <p class="section-label">Functions & Arrow Functions</p>
+  <div class="code-label">JAVASCRIPT</div>
+  <div class="code-block">
+<span class="comment">// Traditional function</span><br>
+<span class="kw">function</span> greet(person) {<br>
+&nbsp;&nbsp;<span class="kw">return</span> <span class="str">`Hello, ${person}!`</span>;<br>
+}<br><br>
+<span class="comment">// Arrow function (ES6)</span><br>
+<span class="kw">const</span> greet = (person) =&gt; <span class="str">`Hello, ${person}!`</span>;<br><br>
+<span class="comment">// Higher-order functions</span><br>
+<span class="kw">const</span> nums = [<span class="val">1</span>, <span class="val">2</span>, <span class="val">3</span>, <span class="val">4</span>];<br>
+<span class="kw">const</span> doubled = nums.<span class="attr">map</span>(n =&gt; n * <span class="val">2</span>); <span class="comment">// [2,4,6,8]</span>
+  </div>
+
+  <!-- DOM -->
+  <p class="section-label">DOM Manipulation</p>
+  <div class="code-label">JAVASCRIPT</div>
+  <div class="code-block">
+<span class="comment">// Select elements</span><br>
+<span class="kw">const</span> title = document.<span class="attr">getElementById</span>(<span class="str">"title"</span>);<br>
+<span class="kw">const</span> items = document.<span class="attr">querySelectorAll</span>(<span class="str">".item"</span>);<br><br>
+<span class="comment">// Modify content and style</span><br>
+title.<span class="attr">textContent</span> = <span class="str">"New Title"</span>;<br>
+title.<span class="attr">style</span>.color = <span class="str">"#3a7bd5"</span>;<br><br>
+<span class="comment">// Listen for events</span><br>
+document.<span class="attr">getElementById</span>(<span class="str">"btn"</span>).<span class="attr">addEventListener</span>(<span class="str">"click"</span>, () =&gt; {<br>
+&nbsp;&nbsp;alert(<span class="str">"Button clicked!"</span>);<br>
+});
+  </div>
+
+  <!-- Counter demo -->
+  <p class="section-label">Demo 1 – Click Counter</p>
+  <div class="demo-area">
+    <h4>Interactive Counter</h4>
+    <div class="js-counter" id="counter-display">0</div>
+    <button class="js-demo-btn" onclick="changeCounter(1)">+ Increment</button>
+    <button class="js-demo-btn" onclick="changeCounter(-1)" style="background:#e74c3c;color:#fff;">− Decrement</button>
+    <button class="js-demo-btn" onclick="resetCounter()" style="background:#555;color:#fff;">Reset</button>
+  </div>
+
+  <!-- Greeting demo -->
+  <p class="section-label">Demo 2 – Greeting Generator</p>
+  <div class="demo-area">
+    <h4>Template Literal Demo</h4>
+    <input id="greet-input" class="js-input" type="text" placeholder="Enter your name…">
+    <button class="js-demo-btn" onclick="runGreet()">Greet me!</button>
+    <div class="js-demo-output" id="greet-output">Output will appear here…</div>
+  </div>
+
+  <!-- Colour demo -->
+  <p class="section-label">Demo 3 – Random Background Colour</p>
+  <div class="demo-area">
+    <h4>DOM Style Manipulation</h4>
+    <button class="js-demo-btn" onclick="randomColour()">🎨 Random Colour</button>
+    <div class="color-box" id="colour-box" style="background:#3a7bd5;"></div>
+    <div class="js-demo-output" id="colour-output" style="margin-top:8px;">Current: #3a7bd5</div>
+  </div>
+
+  <!-- To-do demo -->
+  <p class="section-label">Demo 4 – To-Do List</p>
+  <div class="demo-area">
+    <h4>Array & DOM Interaction Demo</h4>
+    <div class="todo-input-row">
+      <input type="text" id="todo-input" class="todo-input" placeholder="Add a new task…">
+      <button class="js-demo-btn" style="margin:0;" onclick="addTodo()">Add</button>
+    </div>
+    <ul class="todo-list" id="todo-list"></ul>
+  </div>
+
+  <!-- Quiz demo -->
+  <p class="section-label">Demo 5 – Mini Quiz</p>
+  <div class="demo-area">
+    <h4>Event Listener Demo</h4>
+    <p style="font-size:0.9rem;color:#333;margin-bottom:12px;font-weight:600;">Which keyword declares a constant in JavaScript?</p>
+    <button class="quiz-option" onclick="checkQuiz(this,'wrong')">var</button>
+    <button class="quiz-option" onclick="checkQuiz(this,'wrong')">let</button>
+    <button class="quiz-option" onclick="checkQuiz(this,'correct')">const</button>
+    <button class="quiz-option" onclick="checkQuiz(this,'wrong')">def</button>
+    <div class="quiz-result" id="quiz-result"></div>
+  </div>
+
+  <div class="info-box">
+    💡 <strong>ES6+:</strong> Modern JavaScript (ES6 and beyond) introduced arrow functions, template literals, destructuring, classes, Promises, and async/await — making the language far more expressive. Always prefer <code>const</code> and <code>let</code> over <code>var</code>.
+  </div>
+
+</main>
+
+<footer>
+  <strong>CET138 – Full Stack Development ePortfolio</strong><br>
+  Created as part of Assignment 1 · Section 5 of 5: JavaScript
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="fullstack.html">Full Stack</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="bootstrap.html">Bootstrap</a>
+    <a href="js.html">JavaScript</a>
+  </div>
+</footer>
+
+<script>
+  /* ── Counter ── */
+  let count = 0;
+  function changeCounter(d) {
+    count += d;
+    document.getElementById('counter-display').textContent = count;
+  }
+  function resetCounter() {
+    count = 0;
+    document.getElementById('counter-display').textContent = 0;
+  }
+
+  /* ── Greeting ── */
+  function runGreet() {
+    const name = document.getElementById('greet-input').value.trim();
+    const out  = document.getElementById('greet-output');
+    out.textContent = name
+      ? `Hello, ${name}! Welcome to full stack development 🚀`
+      : '⚠️  Please enter a name first.';
+  }
+  document.getElementById('greet-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') runGreet();
+  });
+
+  /* ── Random colour ── */
+  function randomColour() {
+    const hex = '#' + Math.floor(Math.random()*0xFFFFFF).toString(16).padStart(6,'0');
+    document.getElementById('colour-box').style.background = hex;
+    document.getElementById('colour-output').textContent = 'Current: ' + hex;
+  }
+
+  /* ── To-do ── */
+  const todos = [];
+  function addTodo() {
+    const input = document.getElementById('todo-input');
+    const text  = input.value.trim();
+    if (!text) return;
+    todos.push({ text, done: false });
+    input.value = '';
+    renderTodos();
+  }
+  function renderTodos() {
+    const ul = document.getElementById('todo-list');
+    ul.innerHTML = '';
+    if (todos.length === 0) {
+      ul.innerHTML = '<li style="color:#888;font-size:0.88rem;">No tasks yet — add one above.</li>';
+      return;
+    }
+    todos.forEach((t, i) => {
+      const li = document.createElement('li');
+      if (t.done) li.classList.add('done');
+      li.innerHTML = `
+        <input type="checkbox" ${t.done ? 'checked' : ''} onchange="toggleTodo(${i})">
+        <span>${t.text}</span>
+        <button onclick="deleteTodo(${i})">Remove</button>`;
+      ul.appendChild(li);
+    });
+  }
+  function toggleTodo(i) { todos[i].done = !todos[i].done; renderTodos(); }
+  function deleteTodo(i) { todos.splice(i, 1); renderTodos(); }
+  document.getElementById('todo-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') addTodo();
+  });
+  renderTodos();
+
+  /* ── Quiz ── */
+  let quizDone = false;
+  function checkQuiz(btn, result) {
+    if (quizDone) return;
+    quizDone = true;
+    btn.classList.add(result);
+    const res = document.getElementById('quiz-result');
+    if (result === 'correct') {
+      res.textContent = '✅ Correct! const declares a block-scoped constant that cannot be reassigned.';
+      res.style.color = '#0f5132';
+    } else {
+      res.textContent = '❌ Not quite — the answer is const. Try refreshing to try again!';
+      res.style.color = '#842029';
+      // highlight correct answer
+      document.querySelectorAll('.quiz-option').forEach(b => {
+        if (b.onclick.toString().includes("'correct'")) b.classList.add('correct');
+      });
+    }
+  }
+</script>
+</body>
+</html>

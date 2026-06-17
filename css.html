@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS | CET138 ePortfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Extra styles for CSS-page-specific demos */
+    .specificity-table { width:100%; border-collapse:collapse; font-size:0.87rem; margin-top:10px; }
+    .specificity-table th { background:#1e2d40; color:#fff; padding:10px 14px; text-align:left; }
+    .specificity-table td { padding:10px 14px; border-bottom:1px solid #e0e4ea; }
+    .specificity-table tr:nth-child(even) td { background:#f8f9fb; }
+    .flex-demo { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+    .flex-item {
+      background:#3a7bd5; color:#fff; border-radius:6px;
+      padding:12px 18px; font-size:0.85rem; font-weight:600;
+    }
+    .grid-demo { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:10px; }
+    .grid-item {
+      background:#27ae60; color:#fff; border-radius:6px;
+      padding:14px 10px; text-align:center; font-size:0.83rem; font-weight:600;
+    }
+    .grid-item.span2 { grid-column: span 2; background:#1e9c6e; }
+    .anim-box {
+      width:70px; height:70px; background:#3a7bd5; border-radius:8px;
+      margin-top:10px; animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); background:#3a7bd5; }
+      50%       { transform: scale(1.25); background:#e74c3c; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CET138 – Full Stack Development</h1>
+  <p class="subtitle">ePortfolio Assessment — Section 3: CSS</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="fullstack.html">Full Stack</a>
+  <a href="html.html">HTML</a>
+  <a href="css.html" class="active">CSS</a>
+  <a href="bootstrap.html">Bootstrap</a>
+  <a href="js.html">JavaScript</a>
+</nav>
+
+<main>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <h2 class="page-title">CSS – Cascading Style Sheets</h2>
+
+  <p class="lead">CSS is used to control the <b>visual presentation</b> of HTML elements. It enables developers to apply colours, fonts, spacing, layouts, and animations — completely separating content (HTML) from design.</p>
+
+  <p class="lead">CSS rules consist of a <b>selector</b> that targets an element, and a <b>declaration block</b> containing one or more property–value pairs.</p>
+
+  <!-- Selectors -->
+  <p class="section-label">CSS Selectors</p>
+  <div class="code-label">CSS</div>
+  <div class="code-block">
+<span class="comment">/* Element selector — targets all &lt;p&gt; tags */</span><br>
+<span class="kw">p</span> { <span class="attr">color</span>: <span class="val">#333</span>; <span class="attr">font-size</span>: <span class="val">16px</span>; }<br><br>
+<span class="comment">/* Class selector */</span><br>
+<span class="kw">.highlight</span> { <span class="attr">background</span>: <span class="val">yellow</span>; <span class="attr">font-weight</span>: <span class="val">bold</span>; }<br><br>
+<span class="comment">/* ID selector */</span><br>
+<span class="kw">#main-title</span> { <span class="attr">font-size</span>: <span class="val">2rem</span>; <span class="attr">color</span>: <span class="val">#1e2d40</span>; }<br><br>
+<span class="comment">/* Pseudo-class — hover state */</span><br>
+<span class="kw">a:hover</span> { <span class="attr">color</span>: <span class="val">red</span>; <span class="attr">text-decoration</span>: <span class="val">underline</span>; }<br><br>
+<span class="comment">/* Combinator — direct child */</span><br>
+<span class="kw">nav &gt; a</span> { <span class="attr">padding</span>: <span class="val">10px</span>; }
+  </div>
+
+  <!-- Specificity -->
+  <p class="section-label">CSS Specificity</p>
+  <p class="lead">When multiple rules target the same element, the browser uses <b>specificity</b> to decide which rule wins. Higher specificity overrides lower specificity.</p>
+
+  <div class="demo-area">
+    <h4>Specificity Hierarchy (highest to lowest)</h4>
+    <table class="specificity-table">
+      <tr><th>Selector Type</th><th>Example</th><th>Specificity Score</th></tr>
+      <tr><td>Inline style</td><td><code>style="color:red"</code></td><td>1,0,0,0</td></tr>
+      <tr><td>ID selector</td><td><code>#title</code></td><td>0,1,0,0</td></tr>
+      <tr><td>Class / pseudo-class</td><td><code>.btn</code> / <code>:hover</code></td><td>0,0,1,0</td></tr>
+      <tr><td>Element / pseudo-element</td><td><code>p</code> / <code>::before</code></td><td>0,0,0,1</td></tr>
+    </table>
+  </div>
+
+  <!-- Box model -->
+  <p class="section-label">The Box Model</p>
+  <p class="lead">Every HTML element is treated as a rectangular <b>box</b> made up of four areas: <b>content</b>, <b>padding</b>, <b>border</b>, and <b>margin</b>. Understanding the box model is essential for controlling spacing and layout.</p>
+
+  <div class="demo-area">
+    <h4>Visual Box Model</h4>
+    <div style="background:#f9e4b7;padding:16px;border-radius:6px;text-align:center;font-size:0.82rem;color:#555;">
+      margin
+      <div style="background:#f0c27f;padding:14px;margin:8px;border-radius:4px;">
+        border
+        <div style="background:#b8d9a4;padding:12px;margin:6px;border-radius:4px;">
+          padding
+          <div style="background:#fff;padding:12px;border-radius:3px;font-weight:700;color:#1e2d40;">
+            content
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Colours demo -->
+  <p class="section-label">Colour & Styling Demo</p>
+  <div class="demo-area">
+    <h4>Styled Boxes</h4>
+    <div class="css-demo-box">
+      <div class="css-box" style="background:#3a7bd5;">solid colour</div>
+      <div class="css-box" style="background:#27ae60;">solid colour</div>
+      <div class="css-box" style="background:#e74c3c;border-radius:50%;">border-radius</div>
+      <div class="css-box" style="background:linear-gradient(135deg,#f0a500,#e74c3c);">gradient</div>
+      <div class="css-box" style="background:transparent;border:3px dashed #3a7bd5;color:#3a7bd5;">dashed border</div>
+      <div class="css-box" style="background:#1e2d40;box-shadow:0 4px 16px rgba(0,0,0,0.3);">box-shadow</div>
+    </div>
+  </div>
+
+  <!-- Flexbox -->
+  <p class="section-label">Flexbox Layout</p>
+  <div class="code-label">CSS</div>
+  <div class="code-block">
+<span class="kw">.container</span> {<br>
+&nbsp;&nbsp;<span class="attr">display</span>: <span class="val">flex</span>;<br>
+&nbsp;&nbsp;<span class="attr">justify-content</span>: <span class="val">space-between</span>; <span class="comment">/* horizontal alignment */</span><br>
+&nbsp;&nbsp;<span class="attr">align-items</span>: <span class="val">center</span>;    <span class="comment">/* vertical alignment */</span><br>
+&nbsp;&nbsp;<span class="attr">gap</span>: <span class="val">16px</span>;<br>
+&nbsp;&nbsp;<span class="attr">flex-wrap</span>: <span class="val">wrap</span>;<br>
+}
+  </div>
+  <div class="demo-area">
+    <h4>Flexbox Demo</h4>
+    <div class="flex-demo">
+      <div class="flex-item">Item 1</div>
+      <div class="flex-item">Item 2</div>
+      <div class="flex-item">Item 3</div>
+      <div class="flex-item">Item 4</div>
+    </div>
+  </div>
+
+  <!-- CSS Grid -->
+  <p class="section-label">CSS Grid Layout</p>
+  <div class="code-label">CSS</div>
+  <div class="code-block">
+<span class="kw">.grid</span> {<br>
+&nbsp;&nbsp;<span class="attr">display</span>: <span class="val">grid</span>;<br>
+&nbsp;&nbsp;<span class="attr">grid-template-columns</span>: <span class="val">repeat(3, 1fr)</span>;<br>
+&nbsp;&nbsp;<span class="attr">gap</span>: <span class="val">12px</span>;<br>
+}<br>
+<span class="kw">.wide</span> { <span class="attr">grid-column</span>: <span class="val">span 2</span>; }
+  </div>
+  <div class="demo-area">
+    <h4>Grid Demo</h4>
+    <div class="grid-demo">
+      <div class="grid-item span2">spans 2 columns</div>
+      <div class="grid-item">1 col</div>
+      <div class="grid-item">1 col</div>
+      <div class="grid-item">1 col</div>
+      <div class="grid-item">1 col</div>
+    </div>
+  </div>
+
+  <!-- Animation -->
+  <p class="section-label">CSS Animations</p>
+  <div class="code-label">CSS</div>
+  <div class="code-block">
+<span class="kw">.box</span> { <span class="attr">animation</span>: <span class="val">pulse 2s ease-in-out infinite</span>; }<br><br>
+<span class="kw">@keyframes</span> pulse {<br>
+&nbsp;&nbsp;<span class="kw">0%, 100%</span>  { <span class="attr">transform</span>: <span class="val">scale(1)</span>; }<br>
+&nbsp;&nbsp;<span class="kw">50%</span>        { <span class="attr">transform</span>: <span class="val">scale(1.25)</span>; }<br>
+}
+  </div>
+  <div class="demo-area">
+    <h4>Animation Demo</h4>
+    <div class="anim-box"></div>
+  </div>
+
+  <div class="info-box">
+    💡 <strong>Flexbox vs Grid:</strong> Use <strong>Flexbox</strong> for one-dimensional layouts (a single row or column). Use <strong>CSS Grid</strong> for two-dimensional layouts where you need control over both rows and columns simultaneously.
+  </div>
+
+</main>
+
+<footer>
+  <strong>CET138 – Full Stack Development ePortfolio</strong><br>
+  Created as part of Assignment 1 · Section 3 of 5: CSS
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="fullstack.html">Full Stack</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="bootstrap.html">Bootstrap</a>
+    <a href="js.html">JavaScript</a>
+  </div>
+</footer>
+
+</body>
+</html>

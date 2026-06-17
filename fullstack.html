@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Stack Development | CET138 ePortfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>CET138 – Full Stack Development</h1>
+  <p class="subtitle">ePortfolio Assessment — Section 1: Full Stack Development</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="fullstack.html" class="active">Full Stack</a>
+  <a href="html.html">HTML</a>
+  <a href="css.html">CSS</a>
+  <a href="bootstrap.html">Bootstrap</a>
+  <a href="js.html">JavaScript</a>
+</nav>
+
+<main>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <h2 class="page-title">What is Full Stack Development?</h2>
+
+  <p class="lead">Full stack development refers to the development of both the <b>front-end</b> (client side) and <b>back-end</b> (server side) of a web application, including the <b>database</b>. A full stack developer is someone who can work across all these layers.</p>
+
+  <p class="lead">The term "full stack" means the developer has knowledge and skills covering every tier of an application — from what the user sees in the browser all the way down to how data is stored and retrieved on the server.</p>
+
+  <p class="section-label">The Three Layers</p>
+
+  <div class="layer-card">
+    <h3>1. Front-End (Client Side)</h3>
+    <p>This is what the user sees and interacts with in the browser. Technologies used include <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>. Frameworks like React, Vue, and Angular are also commonly used to build complex, reactive user interfaces.</p>
+  </div>
+
+  <div class="layer-card green">
+    <h3>2. Back-End (Server Side)</h3>
+    <p>This is the logic that runs on the server. It processes requests from the front-end and sends back responses. Technologies include <b>Node.js</b>, <b>PHP</b>, <b>Python</b>, and <b>Java</b>. Frameworks like Express, Django, and Laravel are used to organise server-side code.</p>
+  </div>
+
+  <div class="layer-card purple">
+    <h3>3. Database</h3>
+    <p>The database stores and retrieves data for the application. Common options include relational databases like <b>MySQL</b> and <b>PostgreSQL</b> (structured tables), and NoSQL solutions like <b>MongoDB</b> (flexible documents). The back-end communicates with the database to read and write data.</p>
+  </div>
+
+  <p class="section-label">How the Layers Communicate</p>
+
+  <div class="demo-area">
+    <h4>Request / Response Flow</h4>
+    <div style="display:flex;flex-direction:column;gap:0;font-size:0.88rem;">
+      <div style="background:#e8f0fe;border-radius:6px;padding:12px 16px;border-left:4px solid #3a7bd5;">
+        <strong>① Browser (Front-End)</strong> — User clicks a button → JavaScript sends an HTTP request
+      </div>
+      <div style="text-align:center;font-size:1.3rem;color:#888;padding:4px 0;">↓</div>
+      <div style="background:#e8fdf0;border-radius:6px;padding:12px 16px;border-left:4px solid #27ae60;">
+        <strong>② Server (Back-End)</strong> — Receives the request, runs business logic, queries the database
+      </div>
+      <div style="text-align:center;font-size:1.3rem;color:#888;padding:4px 0;">↓</div>
+      <div style="background:#f3e8ff;border-radius:6px;padding:12px 16px;border-left:4px solid #8e44ad;">
+        <strong>③ Database</strong> — Returns the requested data to the server
+      </div>
+      <div style="text-align:center;font-size:1.3rem;color:#888;padding:4px 0;">↓</div>
+      <div style="background:#e8f0fe;border-radius:6px;padding:12px 16px;border-left:4px solid #3a7bd5;">
+        <strong>④ Browser (Front-End)</strong> — Receives the response and updates the page dynamically
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Common Full Stack Technology Combinations</p>
+
+  <div class="code-label">Popular Stacks</div>
+  <div class="code-block">
+<span class="comment">// MERN Stack</span><br>
+MongoDB + Express.js + <span class="kw">React</span> + Node.js<br><br>
+<span class="comment">// MEAN Stack</span><br>
+MongoDB + Express.js + <span class="kw">Angular</span> + Node.js<br><br>
+<span class="comment">// LAMP Stack</span><br>
+Linux + <span class="kw">Apache</span> + MySQL + PHP<br><br>
+<span class="comment">// Django Stack</span><br>
+<span class="kw">Python</span> / Django + PostgreSQL + HTML/CSS/JS
+  </div>
+
+  <div class="info-box">
+    💡 <strong>Why Full Stack?</strong> Full stack developers are highly valued because they understand every part of an application. This makes them effective communicators between specialist front-end and back-end teams, and ideal contributors for startups and agile teams where flexibility is essential.
+  </div>
+
+</main>
+
+<footer>
+  <strong>CET138 – Full Stack Development ePortfolio</strong><br>
+  Created as part of Assignment 1 · Section 1 of 5: Full Stack Development
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="fullstack.html">Full Stack</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="bootstrap.html">Bootstrap</a>
+    <a href="js.html">JavaScript</a>
+  </div>
+</footer>
+
+</body>
+</html>
